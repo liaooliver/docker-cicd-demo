@@ -19,7 +19,7 @@ deploy: #This deploys the whole folder onto elasticbeanstalk so it's the product
     app: "sample-docker-react" #the aws elb app name
     env: "SampleDockerReact-env" #the aws elb app environment
     bucket_name: "elasticbeanstalk-ap-northeast-2-338526171041" #s3 storage location for all apps deployed to this region
-
+    bucket_path: "sample-app"
     on:
         branch: master 
         #Only deploy when master branch is updated
