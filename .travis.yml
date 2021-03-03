@@ -15,10 +15,10 @@ script:
 
 deploy: #This deploys the whole folder onto elasticbeanstalk so it's the production Dockerfile that would be used by elasticbeanstalk to startup this app
     provider: elasticbeanstalk
-    region: "ap-northeast-1" #region you selected when creating the elb application
+    region: "ap-northeast-2" #region you selected when creating the elb application
     app: "sample-docker-react" #the aws elb app name
     env: "SampleDockerReact-env" #the aws elb app environment
-    bucket_name: "elasticbeanstalk-ap-northeast-1-338526171041" #s3 storage location for all apps deployed to this region
+    bucket_name: "elasticbeanstalk-ap-northeast-2-338526171041" #s3 storage location for all apps deployed to this region
     bucket_path: "sample-docker-react" #name of the folder where this app you're targeting is located or going to exist
     on:
         branch: master 
