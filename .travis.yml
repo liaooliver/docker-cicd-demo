@@ -1,5 +1,3 @@
-sudo: required #Travis ci requires the user to be with elevated permission
-
 language: node_js
 node_js:
     - "stable"
@@ -7,8 +5,10 @@ node_js:
 services: 
     - docker #Our use of travis ci needs an instance of docker to be running
 
-before_install: #Things to do with your code on travis ci before running tests or deploying your code
-    - docker build -t wilpat/sample-docker-react -f Dockerfile.dev . #Used the .dev dockerfile cos we need to run the tests in travis ci and the test image is in that .dev file
+before_install: 
+  #Things to do with your code on travis ci before running tests or deploying your code
+    - docker build -t wilpat/sample-docker-react -f Dockerfile.dev . 
+    #Used the .dev dockerfile cos we need to run the tests in travis ci and the test image is in that .dev file
 
 script:     
     - docker run -e CI=true wilpat/sample-docker-react npm run test -- --coverage
